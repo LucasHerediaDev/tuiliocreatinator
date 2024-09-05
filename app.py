@@ -4,10 +4,10 @@ from datetime import datetime
 import schedule
 import time
 
-# Configurar suas credenciais do Twilio
-account_sid = 'AC7df5f8666413158f67d972c57aa9cb62'
-auth_token = '89e4e5fcbe92b3b5e588f29d361de0b2'
-twilio_number = 'whatsapp:+14155238886'
+# Configurar suas credenciais do Twilio a partir de variáveis de ambiente
+account_sid = os.getenv('TWILIO_ACCOUNT_SID')
+auth_token = os.getenv('TWILIO_AUTH_TOKEN')
+twilio_number = 'whatsapp:+14155238886' # Esse número pode ser hardcoded, pois talvez não mude
 destino = 'whatsapp:+5511959025596'
 
 cliente = Client(account_sid, auth_token)
