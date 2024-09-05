@@ -4,10 +4,10 @@ from datetime import datetime
 import schedule
 import time
 
-# Configurar suas credenciais do Twilio a partir de variáveis de ambiente
-account_sid = os.getenv('TWILIO_ACCOUNT_SID')
-auth_token = os.getenv('TWILIO_AUTH_TOKEN')
-twilio_number = 'whatsapp:+14155238886' # Esse número pode ser hardcoded, pois talvez não mude
+# Configurar suas credenciais do Twilio
+account_sid = 'AC7df5f8666413158f67d972c57aa9cb62'
+auth_token = '89e4e5fcbe92b3b5e588f29d361de0b2'
+twilio_number = 'whatsapp:+14155238886'
 destino = 'whatsapp:+5511959025596'
 
 cliente = Client(account_sid, auth_token)
@@ -32,9 +32,9 @@ def enviar_mensagem_sexta():
 
 def agendar_mensagens():
     # Agenda o envio da mensagem diária para todos os dias às 10:00
-    schedule.every().day.at("10:00").do(enviar_mensagem_diaria)
+    schedule.every().day.at("19:39").do(enviar_mensagem_diaria)
     # Agenda o envio da mensagem de sexta-feira para toda sexta às 10:00
-    schedule.every().friday.at("10:00").do(enviar_mensagem_sexta)
+    schedule.every().friday.at("19:40").do(enviar_mensagem_sexta)
 
 def main():
     agendar_mensagens()  # Chama a função para agendar as mensagens
